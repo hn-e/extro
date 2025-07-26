@@ -9,6 +9,7 @@ import styles from "@/components/Header.module.scss";
 import { routes, display } from "@/app/resources";
 import { person, about, blog, work, gallery } from "@/app/resources/content";
 import { ThemeToggle } from "./ThemeToggle";
+import Image from "next/image";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -48,7 +49,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
+      {/* <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} /> */}
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
@@ -59,10 +60,13 @@ export const Header = () => {
         fillWidth
         padding="8"
         horizontal="center"
-        data-border="rounded"
+        // data-border="rounded"
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+        {/* <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+          {display.location && <Flex hide="s">{person.location}</Flex>}  // here i want to show the logo.
+        </Flex> */}
+        <Flex hide="s">
+          <Image src="/images/juriscape_logo.png" alt="Logo" width={120} height={32} />
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -156,7 +160,7 @@ export const Header = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex fillWidth horizontal="end" vertical="center">
+        {/* <Flex fillWidth horizontal="end" vertical="center">
           <Flex
             paddingRight="12"
             horizontal="end"
@@ -166,7 +170,7 @@ export const Header = () => {
           >
             <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
           </Flex>
-        </Flex>
+        </Flex> */}
       </Flex>
     </>
   );
