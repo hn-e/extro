@@ -65,9 +65,9 @@ export const Header = () => {
         {/* <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
           {display.location && <Flex hide="s">{person.location}</Flex>}  // here i want to show the logo.
         </Flex> */}
-        <Flex hide="s">
+        {/* <Flex hide="s">
           <Image src="/images/_logo.png" alt="Logo" width={140} style={{ paddingLeft: 20 }} height={40} />
-        </Flex>
+        </Flex> */}
         <Flex fillWidth horizontal="center">
           <Flex
             background="surface"
