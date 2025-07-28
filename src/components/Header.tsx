@@ -66,7 +66,7 @@ export const Header = () => {
           {display.location && <Flex hide="s">{person.location}</Flex>}  // here i want to show the logo.
         </Flex> */}
         <Flex hide="s">
-          <Image src="/images/juriscape_logo.png" alt="Logo" width={120} height={32} />
+          <Image src="/images/_logo.png" alt="Logo" width={140} style={{ paddingLeft: 20 }} height={40} />
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -83,6 +83,23 @@ export const Header = () => {
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              {routes["/about"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="person"
+                    href="/about"
+                    label={about.label}
+                    selected={pathname === "/about"}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="person"
+                    href="/about"
+                    selected={pathname === "/about"}
+                  />
+                </>
+              )}
               {routes["/about"] && (
                 <>
                   <ToggleButton
@@ -117,6 +134,23 @@ export const Header = () => {
                   />
                 </>
               )}
+              {routes["/work"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="grid"
+                    href="/work"
+                    label={work.label}
+                    selected={pathname.startsWith("/work")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="grid"
+                    href="/work"
+                    selected={pathname.startsWith("/work")}
+                  />
+                </>
+              )}
               {routes["/blog"] && (
                 <>
                   <ToggleButton
@@ -131,6 +165,40 @@ export const Header = () => {
                     prefixIcon="book"
                     href="/blog"
                     selected={pathname.startsWith("/blog")}
+                  />
+                </>
+              )}
+              {routes["/blog"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="book"
+                    href="/blog"
+                    label={blog.label}
+                    selected={pathname.startsWith("/blog")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="book"
+                    href="/blog"
+                    selected={pathname.startsWith("/blog")}
+                  />
+                </>
+              )}
+              {routes["/gallery"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="gallery"
+                    href="/gallery"
+                    label={gallery.label}
+                    selected={pathname.startsWith("/gallery")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="gallery"
+                    href="/gallery"
+                    selected={pathname.startsWith("/gallery")}
                   />
                 </>
               )}
